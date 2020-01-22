@@ -1,0 +1,22 @@
+{
+	"func_name" : "ServiceGroup",
+	"methods" : ["Create", "Read", "Update", "Delete"],
+	"name_key_value" : "name := d.Get('name').(string)",
+	"data_to_func" : "dataToSg",
+	"data_to_func_params" : "name, d",
+	"set_id_params" : "name",
+	"get_func_params" : "client.Token, name, client.Host",
+	"name" : true,
+	"struct_instance" : "ServiceGroup",
+	"axapi_url" : "slb/service-group",
+
+	"test_params": {"config_name":"SG", 
+					"check_func": true,
+					"check_destroy": true, 
+					"resource_attrs": ["'vthunder_service_group.sg9'", ["'name', NAME_SG", "'ip_mask', MASK", 
+					  "protocol', 'TCP'", "'10.0.2.9'", "'ip_nexthop_ipv4.0.distance_nexthop_ip', '1'"]],
+					"resource_name": "NAME_SG",
+					"create_import": true
+				}
+
+}
