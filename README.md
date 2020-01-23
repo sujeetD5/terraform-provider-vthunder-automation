@@ -65,8 +65,12 @@ Output of the 1st and 2nd file will be based on method parameters provided by us
 ## Go_struct_generate
 
 -   This is a module written in java which helps to generate Go code for a structure which is mapped with the paramaters provided in the "tf" file.
-
 -  ResourceUtil.java is an util class responsible to generate go code and accepts a Json string for input payload defined in Jsons.java.
+  
+### Usage
+- Add the json structure of the input payload for an axapi for which a resource needs to be generated in the file "Jsons.java"
+- Replace the reference of Jsonobject in "ResourceUtil.java" with the newly added constant variable in Jsons.java.
+- Run the java class "ResourceUtil.java" using either cmd or any IDE.
 
 
 
