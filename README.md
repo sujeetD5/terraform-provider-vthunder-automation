@@ -69,7 +69,19 @@ Output of the 1st and 2nd file will be based on method parameters provided by us
   
 ### Usage
 - Add the json structure of the input payload for an axapi for which a resource needs to be generated in the file "Jsons.java"
+eg: 
+```
+public static final String OVERLAY_TUNNEL_OPTIONS = "{\n" + "  \"options\": {\n"
+			+ "    \"nvgre-key-mode-lower24\": 0,\n" + "    \"uuid\": \"string\",\n"
+			+ "    \"tcp-mss-adjust-disable\": 0,\n" + "    \"gateway-mac\": \"string\",\n"
+			+ "    \"ip-dscp-preserve\": 0,\n" + "    \"nvgre-disable-flow-id\": 0,\n" + "    \"vxlan-dest-port\": 0\n"
+			+ "  }\n" + "}";
+```
 - Replace the reference of Jsonobject in "ResourceUtil.java" with the newly added constant variable in Jsons.java.
+eg:
+```
+JSONObject jo = (JSONObject) new JSONObject(Jsons.OVERLAY_TUNNEL_OPTIONS).get("options");
+```
 - Run the java class "ResourceUtil.java" using either cmd or any IDE.
 
 
